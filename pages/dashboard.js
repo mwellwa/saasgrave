@@ -15,15 +15,15 @@ export default function UserUploadForm() {
     const { data, error } = await supabase
     .from('post')
     .insert([
-    { id: 1, project_name: name, project_bio: bio, birth_date: `${dob}`, death_date: `${dod}`, user_id: 1},
+    { id: 2, project_name: name, project_bio: bio, birth_date: `${dob}`, death_date: `${dod}`, user_id: 1},
     ])
 
     console.log({ name, bio, dob, dod });
   };
 
   return (
-    <div className="m-7">
-      <form onSubmit={handleSubmit}>
+    <div className="h-screen w10-screen bg-stone-950">
+      <form onSubmit={handleSubmit} className="ml-10 mr-10 mb-10 bg-stone-950">
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
             Deceased Project's Name
@@ -110,7 +110,7 @@ export default function UserUploadForm() {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-blue-500 hover:bg-blue-700 active:bg-violet-700 focus:ring focus:ring-violet-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Submit
         </button>
